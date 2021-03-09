@@ -1,2 +1,2 @@
-discord.py
-request
+pip install discord.py
+pip install  request
