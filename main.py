@@ -3,6 +3,7 @@ from discord.ext import commands
 from gp import greatPowers
 from adm import administrative
 from mil import military 
+from anyData import aData
 import re 
 
 bot = commands.Bot(command_prefix="!ss ", help_command=None)
@@ -39,7 +40,12 @@ async def all(ctx, save):
         await ctx.send(str(administrative(save))+ str(military(save)))
 
 @bot.command()
+async def data(ctx, save, dataId, playerCount):
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(aData(save, dataId, playerCount))
+
+@bot.command()
 async def help(ctx):
-    await ctx.send("""```Komut: !ss gp [save] [oyuncu sayısı]\nAçıklama: Oyuncuların büyük güç sıralamasını gösterir.\n\nKomut: !ss adm [save]\nAçıklama: Yönetim istatistiklerini gösterir.\n\nKomut: !ss mil [save]\nAçıklama: Askeri istatistiklerini gösterir.\n\nKomut: !ss all [save]\nAçıklama: Askeri ve Yönetim istatistiklerini gösterir.\n\nBotu sadece (GM) rolüne sahip kişiler kullanabilir```""")
+    await ctx.send("""```Komut: !ss gp [save] [oyuncu sayısı]\nAçıklama: Oyuncuların büyük güç sıralamasını gösterir.\n\nKomut: !ss adm [save]\nAçıklama: Yönetim istatistiklerini gösterir.\n\nKomut: !ss mil [save]\nAçıklama: Askeri istatistiklerini gösterir.\n\nKomut: !ss all [save]\nAçıklama: Askeri ve Yönetim istatistiklerini gösterir.\n\nBotu sadece (GM) rolüne sahip kişiler kullanabilir.\n\nKomut: !ss data [save] [dataId] [oyuncu sayısı]\nAçıklama: Herhangi bir veri listesini çekmeye yarar.```""")
 
 bot.run('ODE2NjIwNDUyODY4MjU5ODkw.YD9nEA.z-LnaEYWsvMeYDRwiUWQhbe2938')
