@@ -20,22 +20,26 @@ async def on_message(message):
 
 @bot.command()
 async def gp(ctx, save, playerCount):
-    await ctx.send(greatPowers(save, playerCount))
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(greatPowers(save, playerCount))
 
 @bot.command()
 async def adm(ctx, save):
-    await ctx.send(administrative(save))
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(administrative(save))
 
 @bot.command()
 async def mil(ctx, save):
-    await ctx.send(military(save))
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(military(save))
 
 @bot.command()
 async def all(ctx, save):
-    await ctx.send(str(administrative(save))+ str(military(save)))
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(str(administrative(save))+ str(military(save)))
 
 @bot.command()
 async def help(ctx):
-    await ctx.send("""```Command: !ss gp [save] [player count]\nDescription: Player shows great power ranking.\n\nCommand: !ss adm [save]\nDescription: Administrative statistics.\n\nCommand: !ss mil [save]\nDescription: Military statistics.\n\nCommand: !ss all [save]\nDescription: adm + mil statistics.```""")
+    await ctx.send("""```Command: !ss gp [save] [oyuncu sayısı]\nDescription: Oyuncuların büyük güç sıralamasını gösterir.\n\nCommand: !ss adm [save]\nDescription: Yönetim istatistiklerini gösterir.\n\nCommand: !ss mil [save]\nDescription: Askeri istatistiklerini gösterir.\n\nCommand: !ss all [save]\nDescription: Askeri ve Yönetim istatistiklerini gösterir.\n\nBotu sadece (GM) rolüne sahip kişiler kullanabilir```""")
 
 bot.run('ODE2NjIwNDUyODY4MjU5ODkw.YD9nEA.z-LnaEYWsvMeYDRwiUWQhbe2938')
