@@ -40,6 +40,6 @@ async def all(ctx, save):
 
 @bot.command()
 async def help(ctx):
-    await ctx.send("""```Command: !ss gp [save] [oyuncu sayısı]\nDescription: Oyuncuların büyük güç sıralamasını gösterir.\n\nCommand: !ss adm [save]\nDescription: Yönetim istatistiklerini gösterir.\n\nCommand: !ss mil [save]\nDescription: Askeri istatistiklerini gösterir.\n\nCommand: !ss all [save]\nDescription: Askeri ve Yönetim istatistiklerini gösterir.\n\nBotu sadece (GM) rolüne sahip kişiler kullanabilir```""")
+    await ctx.send("""```Komut: !ss gp [save] [oyuncu sayısı]\nAçıklama: Oyuncuların büyük güç sıralamasını gösterir.\n\nKomut: !ss adm [save]\nAçıklama: Yönetim istatistiklerini gösterir.\n\nKomut: !ss mil [save]\nAçıklama: Askeri istatistiklerini gösterir.\n\nKomut: !ss all [save]\nAçıklama: Askeri ve Yönetim istatistiklerini gösterir.\n\nBotu sadece (GM) rolüne sahip kişiler kullanabilir```""")
 
 bot.run('ODE2NjIwNDUyODY4MjU5ODkw.YD9nEA.z-LnaEYWsvMeYDRwiUWQhbe2938')
