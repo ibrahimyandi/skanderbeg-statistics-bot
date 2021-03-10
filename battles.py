@@ -53,8 +53,8 @@ def battlesData(save, playerCount):
     content="**```Muharebe Listesi\nTarih Şehir Ordu/Kayıp Saldıran/Savunan SalSayısı/SavSayısı SalKayıp/SavKayıp\n"
     for i in battles[:int(playerCount)]:
         if i.result == 'yes':
-            content = content + "{0} {1} Ordu({2})/({3})Kayıp (G){4}/{5}(M) {6}/{7} {8}/{9}\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "{0} {1} Ordu({2})/({3})Kayıp (G){4}/{5}(M) {6}/{7} {8}/{9}\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
         else:
-            content = content + "{0} {1} Ordu({2})/({3})Kayıp (M){4}/{5}(G) {6}/{7} {8}/{9}\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "{0} {1} Ordu({2})/({3})Kayıp (M){4}/{5}(G) {6}/{7} {8}/{9}\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
     content = content + "```**"
     return content
