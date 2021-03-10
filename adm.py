@@ -53,13 +53,13 @@ def administrative(save):
         if 'player' in data.get(i)[0] and 'total_mana_spent' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],int(data.get(i)[0]['total_mana_spent']['s'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En çok mana(puan) harcayan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En çok mana(puan) harcayan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'total_mana_spent_on_stabbing_up' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['total_mana_spent_on_stabbing_up'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En Çok İstikrar stability(basan): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En Çok İstikrar stability(basan): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'real_development_ratio' in data.get(i)[0]:
@@ -71,7 +71,7 @@ def administrative(save):
         if 'player' in data.get(i)[0] and 'deving_stats' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['deving_stats']['s'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En çok dev puanı basan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En çok dev puanı basan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'weighted_avg_monarch' in data.get(i)[0] and 'human' in data.get(i)[0]:
@@ -89,42 +89,42 @@ def administrative(save):
         if 'player' in data.get(i)[0] and 'spent_total' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_total'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En çok para harcayan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En çok para harcayan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_advisors' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_on_advisors'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En Pahalı Kabine(advisora para harcayan): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En Pahalı Kabine(advisora para harcayan): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_subsidies' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_on_subsidies'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En Cömert(subsidies): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En Cömert(subsidies): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_gifts' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_on_gifts'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En Cömert(gift): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En Cömert(gift): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_buildings' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_on_buildings'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En çok yatırım yapan(bina basan): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En çok yatırım yapan(bina basan): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_loans' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_on_loans'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En Çok Borç Ödemiş: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En Çok Borç Ödemiş: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_interest' in data.get(i)[0]:
             admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['spent_on_interest'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
-    content = content + "En Çok Faiz Ödeyen: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    content = content + "En Çok Faiz Ödeyen: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     content = content + "```"
     return content
