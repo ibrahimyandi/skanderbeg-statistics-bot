@@ -46,6 +46,6 @@ async def data(ctx, save, dataId, playerCount):
 
 @bot.command()
 async def help(ctx):
-    await ctx.send("""```Komut: !ss gp [save] [oyuncu sayısı]\nAçıklama: Oyuncuların büyük güç sıralamasını gösterir.\n\nKomut: !ss adm [save]\nAçıklama: Yönetim istatistiklerini gösterir.\n\nKomut: !ss mil [save]\nAçıklama: Askeri istatistiklerini gösterir.\n\nKomut: !ss all [save]\nAçıklama: Askeri ve Yönetim istatistiklerini gösterir.\n\nBotu sadece (GM) rolüne sahip kişiler kullanabilir.\n\nKomut: !ss data [save] [dataId] [oyuncu sayısı]\nAçıklama: Herhangi bir veri listesini çekmeye yarar.```""")
+    await ctx.send("""```Komut: !ss gp [save] [oyuncu sayısı]\nAçıklama: Oyuncuların büyük güç sıralamasını gösterir.\nKomut: !ss adm [save]\nAçıklama: Yönetim istatistiklerini gösterir.\nKomut: !ss mil [save]\nAçıklama: Askeri istatistiklerini gösterir.\nKomut: !ss all [save]\nAçıklama: Askeri ve Yönetim istatistiklerini gösterir.\nKomut: !ss data [save] [dataId] [oyuncu sayısı]\nAçıklama: Herhangi bir veri listesini çekmeye yarar.\nBotu sadece (GM) rolüne sahip kişiler kullanabilir.```""")
 
 bot.run('ODE2NjIwNDUyODY4MjU5ODkw.YD9nEA.z-LnaEYWsvMeYDRwiUWQhbe2938')
