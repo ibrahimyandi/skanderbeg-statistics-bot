@@ -27,7 +27,7 @@ def administrative(save):
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'technology' in data.get(i)[0]:
-            admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],(int(data.get(i)[0]['technology']['adm'])+int(data.get(i)[0]['technology']['dip'])+int(data.get(i)[0]['technology']['mil']))/3))
+            admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],int(data.get(i)[0]['technology']['adm'])+int(data.get(i)[0]['technology']['dip'])+int(data.get(i)[0]['technology']['mil'])))
         admList = sorted(admList, key=attrgetter('value'), reverse=True)
     content = content + "En İleri Ülke(teknoloji): {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
     admList.clear()
