@@ -28,21 +28,21 @@ def battlesData(save, playerCount):
     for i in range(len(data)):
         if 'attacker' in data[i] and 'defender' in data[i] and 'date' in data[i] and 'type' in data[i] and 'country' in data[i]['attacker'] and 'country' in data[i]['defender']:
             for x in data[i]['attacker']:
-                if x == 'infantry' or x == 'cavalary' or x == 'artillery':
+                if x == 'infantry' or x == 'cavalry' or x == 'artillery':
                     attCount += int(data[i]['attacker'][x])
                 if x == 'country':
                     attCountry = data[i]['attacker'][x]
                 if x == 'losses':
                     attLose = data[i]['attacker'][x]
             for x in data[i]['defender']:
-                if x == 'infantry' or x == 'cavalary' or x == 'artillery':
+                if x == 'infantry' or x == 'cavalry' or x == 'artillery':
                     defCount += int(data[i]['defender'][x])
                 if x == 'country':
                     defCountry = data[i]['defender'][x]
                 if x == 'losses':
                     defLose = data[i]['defender'][x]
         if(attCount+defCount) != 0:
-            battles.append(Players(data[i]['date'], data[i]['name'], data[i]['result'], data[i]['type'], attCountry, attCount, attLose, defCountry, defCount, defLose,int((attCount + defCount)), (attLose + defLose)))
+            battles.append(Players(data[i]['date'], data[i]['name'], data[i]['result'], data[i]['type'], attCountry, attCount, attLose, defCountry, defCount, defLose,(attCount + defCount), (attLose + defLose)))
             battles = sorted(battles, key=attrgetter('totaltroops'), reverse=True)
             attCount = 0
             defCount = 0
