@@ -12,7 +12,7 @@ bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name='!ss help | github.com/ibrahimyandi'))
+    await bot.change_presence(activity=discord.Game(name='!ss help | SW:2a65SWSZAG | PacTi#7453'))
 
 @bot.event
 async def on_message(message):
