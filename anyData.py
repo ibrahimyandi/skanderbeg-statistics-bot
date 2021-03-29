@@ -13,7 +13,10 @@ def aData(save,dataId, playerCount):
     content = "```\n"
     for i in data:
         if 'player' in data.get(i)[0] and '{0}'.format(dataId) in data.get(i)[0]:
-            dataList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'], round(float(data.get(i)[0]['{0}'.format(dataId)]))))
+            if 'deving_stats' in dataId or 'total_mana_spent' in dataId:
+                dataList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'], round(float(data.get(i)[0]['{0}'.format(dataId)]['s']))))
+            else:
+                dataList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'], round(float(data.get(i)[0]['{0}'.format(dataId)]))))
         dataList = sorted(dataList, key=attrgetter('value'), reverse=True)
     content += dataId.replace("_"," ").upper()
     for i in range(len(dataList[:int(playerCount)])):
