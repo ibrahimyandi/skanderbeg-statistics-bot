@@ -71,12 +71,12 @@ def military(save):
         if 'player' in data.get(i)[0] and 'total_mana_spent_on_reducing_we' in data.get(i)[0]:
             milList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],round(float(data.get(i)[0]['total_mana_spent_on_reducing_we']))))
         milList = sorted(milList, key=attrgetter('value'), reverse=True)
-    content = content + "En yorgun(Savaş yorgunluğu düşüren) :  {0}-{1}({2})\n".format(milList[0].player,milList[0].country,f"{milList[0].value:,}")
+    content = content + "En yorgun(Savaş yorgunluğu düşüren): {0}-{1}({2})\n".format(milList[0].player,milList[0].country,f"{milList[0].value:,}")
     milList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'spent_on_forts_building' in data.get(i)[0]:
             milList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],round(float(data.get(i)[0]['spent_on_forts_building']))))
         milList = sorted(milList, key=attrgetter('value'), reverse=True)
-    content = content + "En güvende hisseden(kale basan) :  {0}-{1}({2})\n".format(milList[0].player,milList[0].country,f"{milList[0].value:,}")
+    content = content + "En güvende hisseden(kale basan): {0}-{1}({2})\n".format(milList[0].player,milList[0].country,f"{milList[0].value:,}")
     content = content + "```"
     return content
