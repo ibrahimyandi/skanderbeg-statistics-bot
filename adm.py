@@ -2,7 +2,7 @@ import requests
 from operator import attrgetter
 
 def administrative(save):
-    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&save={0}&value=player;countryName;human;total_development;provinces;technology;total_ideas;monthly_income;innovativeness;total_mana_spent;total_mana_spent_on_stabbing_up;real_development_ratio;deving_stats;weighted_avg_monarch;spent_total;spent_on_advisors;spent_on_subsidies;spent_on_gifts;spent_on_buildings;spent_on_loans;spent_on_interest;&format=json'.format(save))
+    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&save={0}&value=player;countryName;human;total_development;provinces;technology;total_ideas;monthly_income;innovativeness;total_mana_spent;total_mana_spent_on_stabbing_up;real_development_ratio;deving_stats;weighted_avg_monarch;spent_total;spent_on_advisors;spent_on_subsidies;spent_on_gifts;spent_on_buildings;spent_on_loans;spent_on_interest;dev_clicks;&format=json'.format(save))
     data = response.json()
     admList = []
     class Players:
@@ -102,6 +102,15 @@ def administrative(save):
         content = content + "En çok dev puanı basan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     except:
         content = content + "En çok dev puanı basan: {0}-{1}({2})\n".format("null","null","null")
+    admList.clear()
+    for i in data:
+        if 'player' in data.get(i)[0] and 'dev_clicks' in data.get(i)[0]:
+            admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],data.get(i)[0]['dev_clicks']))
+    admList = sorted(admList, key=attrgetter('value'), reverse=True)
+    try:
+        content = content + "En çok dev basmaya tıklayan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
+    except:
+        content = content + "En çok dev basmaya tıklayan: {0}-{1}({2})\n".format("null","null","null")
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'weighted_avg_monarch' in data.get(i)[0] and 'human' in data.get(i)[0]:
