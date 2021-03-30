@@ -5,6 +5,7 @@ from adm import administrative
 from mil import military 
 from anyData import aData
 from battles import battlesData
+from score import scored
 import re 
 
 bot = commands.Bot(command_prefix="!ss ", help_command=None)
@@ -49,7 +50,12 @@ async def data(ctx, save, dataId, playerCount):
 async def battle(ctx, save, playerCount):
     if "gm" in [i.name.lower() for i in ctx.author.roles]:
         await ctx.send(battlesData(save, playerCount))
-    
+
+@bot.command()
+async def score(ctx, save):
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(scored(save))
+
 @bot.command()
 async def help(ctx):
     await ctx.send("""```Komut: !ss gp [save] [oyuncu sayısı]\nKomut: !ss adm [save]\nKomut: !ss mil [save]\nKomut: !ss all [save]\nKomut: !ss data [save] [dataId] [oyuncu sayısı]\nKomut: !ss battle [save] [oyuncu sayısı]\nBotu sadece (GM) rolüne sahip kişiler kullanabilir.```""")
