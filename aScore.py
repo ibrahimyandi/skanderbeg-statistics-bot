@@ -16,7 +16,7 @@ def aScored(save):
     incomeAverage = 1.0
     oStrengthAverage = 1.0
     content = "```"
-    content = content + "SKORLAR(ORANLI)\n"
+    content = content + "SKORLAR(ORANLI) \n"
     for i in data:
         if 'player' in data.get(i)[0]:
             if float(incomeAverage) < float(data.get(i)[0]['monthly_income']):
