@@ -6,6 +6,7 @@ from mil import military
 from anyData import aData
 from battles import battlesData
 from score import scored
+from aScore import aScored
 import re 
 
 bot = commands.Bot(command_prefix="!ss ", help_command=None)
@@ -50,6 +51,11 @@ async def data(ctx, save, dataId, playerCount):
 async def battle(ctx, save, playerCount):
     if "gm" in [i.name.lower() for i in ctx.author.roles]:
         await ctx.send(battlesData(save, playerCount))
+
+@bot.command()
+async def aScore(ctx, save):
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(AScored(save))
 
 @bot.command()
 async def score(ctx, save):
