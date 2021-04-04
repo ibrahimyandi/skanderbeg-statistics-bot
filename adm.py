@@ -105,7 +105,7 @@ def administrative(save):
     admList.clear()
     for i in data:
         if 'player' in data.get(i)[0] and 'dev_clicks' in data.get(i)[0]:
-            admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],data.get(i)[0]['dev_clicks']))
+            admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['dev_clicks'])))
     admList = sorted(admList, key=attrgetter('value'), reverse=True)
     try:
         content = content + "En çok dev basmaya tıklayan: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,admList[0].value)
