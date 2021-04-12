@@ -1,0 +1,2 @@
+Input Image = 1444_map_null.png
+Output Image = 1444_map.png
