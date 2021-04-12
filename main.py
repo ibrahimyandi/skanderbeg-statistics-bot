@@ -92,7 +92,7 @@ async def map(ctx, player_country_list):
 
             def findColor(self):
                 self.getFileName()
-                countryFile = open(createDirectory()+self.file_name+'.txt')
+                countryFile = open("countries/"+self.file_name+'.txt')
                 for line in countryFile:
                     if "color" in line:
                         line = line.split('{')
@@ -129,7 +129,7 @@ async def map(ctx, player_country_list):
                     countryList.append(newVassal)
             
             for country in countryList:
-                country.findColor()
+                country.findColor() 
             ocean = Country('ocean', (68, 107, 163))
             uncolonized = Country('uncolonized', (150, 150, 150))
             wasteland = Country('wasteland', (94, 94, 94))
@@ -146,11 +146,6 @@ async def map(ctx, player_country_list):
                     equivalency[1] = equivalency[1].strip()
                     weirdoDict[equivalency[0]] = equivalency[1]
             return weirdoDict
-
-
-        def createDirectory():
-            totalDirectory  = 'countries\\'
-            return totalDirectory
 
 
         def getColorList(countryList):
