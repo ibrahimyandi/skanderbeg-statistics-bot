@@ -92,7 +92,7 @@ async def map(ctx, player_country_list):
 
             def findColor(self):
                 self.getFileName()
-                countryFile = open("countries/"+self.file_name+'.txt')
+                countryFile = open("countries/"+self.file_name+'.txt', encoding="utf8", errors='ignore')
                 for line in countryFile:
                     if "color" in line:
                         line = line.split('{')
