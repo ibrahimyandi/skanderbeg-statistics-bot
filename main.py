@@ -7,7 +7,6 @@ from anyData import aData
 from battles import battlesData
 from score import scored
 from aScore import aScored
-from player_map.pm_creator import mapping
 import re 
 import time
 from PIL import Image
