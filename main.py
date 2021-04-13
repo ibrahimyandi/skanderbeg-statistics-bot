@@ -42,7 +42,8 @@ async def mil(ctx, save):
 @bot.command()
 async def all(ctx, save):
     if "gm" in [i.name.lower() for i in ctx.author.roles]:
-        await ctx.send(str(administrative(save))+ str(military(save)))
+        await ctx.send(str(greatPowers(save,8))+str(administrative(save)))
+        await ctx.send(str(military(save))+str(battlesData(save,3)))
 
 @bot.command()
 async def data(ctx, save, dataId, playerCount):
