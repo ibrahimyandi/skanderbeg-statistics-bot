@@ -97,6 +97,7 @@ monarch_names = {
 	"Valeska #0" = -10
 	"Sofia #0" = -10
 	"Wendy #0" = -10
+	"Veronica #0" = -10
 }
 
 leader_names = {
@@ -170,6 +171,7 @@ leader_names = {
 	Virtanen
 	Wendel-Örtqvist
 	Young
+	Pazos
 }
 
 ship_names = {

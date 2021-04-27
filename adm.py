@@ -108,7 +108,7 @@ def administrative(save):
                 try:
                     admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],float(data.get(i)[0]['dev_clicks'])))
                 except:
-                    admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],data.get(i)[0]['dev_clicks']))
+                    admList.append(Players(data.get(i)[0]['player'],data.get(i)[0]['countryName'],"null"))
 
     admList = sorted(admList, key=attrgetter('value'), reverse=True)
     try:
