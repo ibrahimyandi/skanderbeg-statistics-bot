@@ -11,7 +11,7 @@ def military(save):
             self.country = country
             self.value = value
 
-    content="```ASKERİ İSTATİSTİKLERİ\n"
+    content="`**ASKERİ İSTATİSTİKLERİ**\n"
 
     for i in data:
         if 'FL' in data.get(i)[0]:
@@ -110,5 +110,5 @@ def military(save):
                 milList.append(Players("?",data.get(i)[0]['countryName'],round(float(data.get(i)[0]['spent_on_forts_building']))))
         milList = sorted(milList, key=attrgetter('value'), reverse=True)
     content = content + "En güvende hisseden(kale basan): {0}-{1}({2})\n".format(milList[0].player,milList[0].country,f"{milList[0].value:,}")
-    content = content + "```"
+    content = content + "`\n"
     return content

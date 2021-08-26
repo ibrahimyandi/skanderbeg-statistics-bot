@@ -11,7 +11,7 @@ def administrative(save):
             self.country = country
             self.value = value
 
-    content="```YÖNETİM İSTATİSTİKLERİ\n"
+    content="`**YÖNETİM İSTATİSTİKLERİ**\n"
 
     for i in data:
         if 'total_development' in data.get(i)[0]:
@@ -259,5 +259,5 @@ def administrative(save):
         content = content + "En Çok Faiz Ödeyen: {0}-{1}({2})\n".format(admList[0].player,admList[0].country,f"{admList[0].value:,}")
     except:
         content = content + "En Çok Faiz Ödeyen: {0}-{1}({2})\n".format("null","null","null")
-    content = content + "```"
+    content = content + "`\n"
     return content

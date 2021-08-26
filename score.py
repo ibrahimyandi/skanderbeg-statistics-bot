@@ -15,8 +15,8 @@ def scored(save):
 
     incomeAverage = 1.0
     oStrengthAverage = 1.0
-    content = "```"
-    content = content + "SKORLAR \n"
+    content = "`"
+    content = content + "**SKORLAR**\n"
     countPlayers = 0
     for i in data:
         if 'player' in data.get(i)[0]:
@@ -43,5 +43,5 @@ def scored(save):
     for i in range(len(scoreList)):
         content = content + "{0}.{1}({2}) {3}+{4} = {5}\n".format(i+1, scoreList[i].country, scoreList[i].player,f"{scoreList[i].income:.1f}", f"{scoreList[i].oStrength:.1f}", f"{scoreList[i].total:.1f}")
 
-    content = content + "```"
+    content = content + "`"
     return content

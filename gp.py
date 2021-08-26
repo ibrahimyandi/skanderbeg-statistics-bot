@@ -19,8 +19,8 @@ def greatPowers(save, playerCount):
                 playerList.append(Players(data.get(i)[0]['countryName'],"?",int(data.get(i)[0]['gp_score'])))
     gpList = sorted(playerList, key=attrgetter('gp_score'), reverse=True)
     playerCount = int(playerCount)
-    text="**```GREAT POWERS LIST\n"
+    text="`**GREAT POWERS LIST**\n"
     for i in range(len(gpList[:playerCount])):
         text = text + "{0} - {1}/{2} ({3})\n".format(i+1, gpList[i].countryName, gpList[i].player, gpList[i].gp_score)
-    text = text + "```**"
+    text = text + "`\n"
     return text

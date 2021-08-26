@@ -10,7 +10,7 @@ def aData(save,dataId, playerCount):
             self.player = player
             self.country = country
             self.value = value
-    content = "```\n"
+    content = "`"
     for i in data:
         try:
             if 'deving_stats' in dataId or 'total_mana_spent' in dataId:
@@ -31,13 +31,13 @@ def aData(save,dataId, playerCount):
         except:
             dataList.append(Players("?",data.get(i)[0]['countryName'], 0))
         dataList = sorted(dataList, key=attrgetter('value'), reverse=True)
-    content += dataId.replace("_"," ").upper()
+    content += "**" + str(dataId.replace("_"," ").upper()) + "**"
     for i in range(len(dataList[:int(playerCount)])):
         try:
             content = content + "\n{0}. {1}({2}) - {3}".format(i+1, dataList[i].country, dataList[i].player,f"{dataList[i].value:,}")
         except:
             content = content + "\n{0}. {1}({2}) - {3}".format(i+1, dataList[i].country, dataList[i].player, dataList[i].value)
 
-    content += "```"
+    content += "`\n"
     print(content)
     return content

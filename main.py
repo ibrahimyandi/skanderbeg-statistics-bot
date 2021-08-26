@@ -5,6 +5,7 @@ from adm import administrative
 from mil import military 
 from anyData import aData
 from battles import battlesData
+from navals import navalData
 from score import scored
 from aScore import aScored
 import re 
@@ -17,12 +18,6 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name='!ss help | SW:2a65SWSZAG | PacTi#7453'))
-
-@bot.event
-async def on_message(message):
-    if message.content.startswith('!ss'):
-        await bot.process_commands(message)
-        await message.delete() 
 
 @bot.command()
 async def gp(ctx, save, playerCount):
@@ -44,7 +39,9 @@ async def all(ctx, save):
     if "gm" in [i.name.lower() for i in ctx.author.roles]:
         await ctx.send(str(greatPowers(save,8))+str(administrative(save)))
         await ctx.send(str(military(save))+str(battlesData(save,3)))
-
+        await ctx.send(str(navalData(save,3)))    
+        await ctx.send(str(scored(save)))
+        
 @bot.command()
 async def data(ctx, save, dataId, playerCount):
     if "gm" in [i.name.lower() for i in ctx.author.roles]:
@@ -54,6 +51,11 @@ async def data(ctx, save, dataId, playerCount):
 async def battle(ctx, save, playerCount):
     if "gm" in [i.name.lower() for i in ctx.author.roles]:
         await ctx.send(battlesData(save, playerCount))
+
+@bot.command()
+async def naval(ctx, save, playerCount):
+    if "gm" in [i.name.lower() for i in ctx.author.roles]:
+        await ctx.send(navalData(save, playerCount))
 
 @bot.command()
 async def aScore(ctx, save):

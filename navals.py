@@ -1,7 +1,7 @@
 import requests
 from operator import attrgetter
 
-def battlesData(save, playerCount):
+def navalData(save, playerCount):
     response = requests.get('http://skanderbeg.pm/api.php?scope=getSaveDataDump&playersOnly=true&save={0}&type=battlesData'.format(save))
     data = response.json()
     battles = []
@@ -28,14 +28,14 @@ def battlesData(save, playerCount):
     for i in range(len(data)):
         if 'attacker' in data[i] and 'defender' in data[i] and 'date' in data[i] and 'type' in data[i] and 'country' in data[i]['attacker'] and 'country' in data[i]['defender']:
             for x in data[i]['attacker']:
-                if x == 'infantry' or x == 'cavalry' or x == 'artillery':
+                if x == 'heavy_ship' or x == 'light_ship' or x == 'galley' or x == 'transport':
                     attCount += int(data[i]['attacker'][x])
                 if x == 'country':
                     attCountry = data[i]['attacker'][x]
                 if x == 'losses':
                     attLose = data[i]['attacker'][x]
             for x in data[i]['defender']:
-                if x == 'infantry' or x == 'cavalry' or x == 'artillery':
+                if x == 'heavy_ship' or x == 'light_ship' or x == 'galley' or x == 'transport':
                     defCount += int(data[i]['defender'][x])
                 if x == 'country':
                     defCountry = data[i]['defender'][x]
@@ -50,11 +50,11 @@ def battlesData(save, playerCount):
             defCountry = ""
             attLose = 0
             defLose = 0
-    content="`**Kara Muharebe Listesi**\n"
+    content="`**Deniz Muharebe Listesi**\n"
     for i in battles[:int(playerCount)]:
         if i.result == 'yes':
-            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam ordu: **{2}** Toplam kayıp: **{3}** Kazanan: **{4}** Kaybeden: **{5}**\nSaldıran ordu sayısı: **{6}** Saldıranın kaybettiği ordu sayısı: **{8}**\nSavunan ordu sayısı: **{7}** Savunanın kaybettiği ordu sayısı: **{9}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam gemi: **{2}** Toplam kayıp: **{3}** Kazanan: **{4}** Kaybeden: **{5}**\nSaldıran gemi sayısı: **{6}** Saldıranın kaybettiği gemi sayısı: **{8}**\nSavunan gemi sayısı: **{7}** Savunanın kaybettiği gemi sayısı: **{9}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
         else:
-            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam ordu: **{2}** Toplam kayıp: **{3}** Kazanan: **{5}** Kaybeden: **{4}**\nSaldıran ordu sayısı: **{7}** Saldıranın kaybettiği ordu sayısı: **{9}**\nSavunan ordu sayısı: **{6}** Savunanın kaybettiği ordu sayısı: **{8}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
-    content = content + "`\n"
+            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam gemi: **{2}** Toplam kayıp: **{3}** Kazanan: **{5}** Kaybeden: **{4}**\nSaldıran gemi sayısı: **{7}** Saldıranın kaybettiği gemi sayısı: **{9}**\nSavunan gemi sayısı: **{6}** Savunanın kaybettiği gemi sayısı: **{8}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+    content= content+"`"
     return content
