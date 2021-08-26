@@ -53,8 +53,8 @@ def battlesData(save, playerCount):
     content="`**Kara Muharebe Listesi**\n"
     for i in battles[:int(playerCount)]:
         if i.result == 'yes':
-            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam ordu: **{2}** Toplam kayıp: **{3}** Kazanan: **{4}** Kaybeden: **{5}**\nSaldıran ordu sayısı: **{6}** Saldıranın kaybettiği ordu sayısı: **{8}**\nSavunan ordu sayısı: **{7}** Savunanın kaybettiği ordu sayısı: **{9}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam ordu: **{2}** Toplam kayıp: **{3}** Kazanan: **{4}** Kaybeden: **{5}**\n{4} ordu sayısı: **{6}**    {4} kaybettiği ordu sayısı: **{8}**\n{5} ordu sayısı: **{7}**    {5}ın kaybettiği ordu sayısı: **{9}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
         else:
-            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam ordu: **{2}** Toplam kayıp: **{3}** Kazanan: **{5}** Kaybeden: **{4}**\nSaldıran ordu sayısı: **{7}** Saldıranın kaybettiği ordu sayısı: **{9}**\nSavunan ordu sayısı: **{6}** Savunanın kaybettiği ordu sayısı: **{8}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam ordu: **{2}** Toplam kayıp: **{3}** Kazanan: **{5}** Kaybeden: **{4}**\n{4} ordu sayısı: **{7}**    {4} kaybettiği ordu sayısı: **{9}**\n{5} ordu sayısı: **{6}**    {5}ın kaybettiği ordu sayısı: **{8}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
     content = content + "`\n"
     return content
