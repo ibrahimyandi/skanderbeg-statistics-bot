@@ -50,10 +50,10 @@ def battlesData(save, playerCount):
             defCountry = ""
             attLose = 0
             defLose = 0
-    content="**```Muharebe Listesi\nTarih Şehir Ordu/Kayıp Saldıran/Savunan SalSayısı/SavSayısı SalKayıp/SavKayıp\n"
+    content="**```Muharebe Listesi\n"
     for i in battles[:int(playerCount)]:
         if i.result == 'yes':
-            content = content + "{0} {1} Ordu({2})/({3})Kayıp (G){4}/{5}(M) {6}/{7} {8}/{9}\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "Tarih:{0} Muharebe:{1} Toplam ordu:{2} Toplam kayıp:{3} Kazanan:{4} Kaybeden:{5}\nSaldıran ordu sayısı:{6} Saldıranın kaybettiği ordu sayısı:{8}\nSavunan ordu sayısı:{7} Savunanın kaybettiği ordu sayısı:{9}\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
         else:
             content = content + "{0} {1} Ordu({2})/({3})Kayıp (M){4}/{5}(G) {6}/{7} {8}/{9}\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
     content = content + "```**"

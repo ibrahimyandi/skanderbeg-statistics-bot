@@ -12,8 +12,11 @@ def greatPowers(save, playerCount):
 
     playerList = []
     for i in data:
-        if 'player' in data.get(i)[0] and 'gp_score' in data.get(i)[0]:
-            playerList.append(Players(data.get(i)[0]['countryName'],data.get(i)[0]['player'],int(data.get(i)[0]['gp_score'])))
+        if 'gp_score' in data.get(i)[0]:
+            if'player' in data.get(i)[0]:
+                playerList.append(Players(data.get(i)[0]['countryName'],data.get(i)[0]['player'],int(data.get(i)[0]['gp_score'])))
+            else:
+                playerList.append(Players(data.get(i)[0]['countryName'],"?",int(data.get(i)[0]['gp_score'])))
     gpList = sorted(playerList, key=attrgetter('gp_score'), reverse=True)
     playerCount = int(playerCount)
     text="**```GREAT POWERS LIST\n"
