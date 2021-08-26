@@ -39,5 +39,4 @@ def aData(save,dataId, playerCount):
             content = content + "\n{0}. {1}({2}) - {3}".format(i+1, dataList[i].country, dataList[i].player, dataList[i].value)
 
     content += "`\n"
-    print(content)
     return content
