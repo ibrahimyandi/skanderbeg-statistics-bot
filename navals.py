@@ -55,6 +55,6 @@ def navalData(save, playerCount):
         if i.result == 'yes':
             content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam gemi: **{2}** Toplam kayıp: **{3}** Kazanan: **{4}** Kaybeden: **{5}**\n{4} gemi sayısı: **{6}**    {4} kaybettiği gemi sayısı: **{8}**\n{5} gemi sayısı: **{7}**    {5} kaybettiği gemi sayısı: **{9}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
         else:
-            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam gemi: **{2}** Toplam kayıp: **{3}** Kazanan: **{5}** Kaybeden: **{4}**\n{4} gemi sayısı: **{7}**    {4} kaybettiği gemi sayısı: **{9}**\n{5} gemi sayısı: **{6}**    {5} kaybettiği gemi sayısı: **{8}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
+            content = content + "Tarih: **{0}** Muharebe: **{1}** Toplam gemi: **{2}** Toplam kayıp: **{3}** Kazanan: **{5}** Kaybeden: **{4}**\n{4} gemi sayısı: **{6}**    {4} kaybettiği gemi sayısı: **{8}**\n{5} gemi sayısı: **{7}**    {5} kaybettiği gemi sayısı: **{9}**\n\n".format(i.date, i.name,i.totaltroops, i.totalLose, i.countryAtt, i.countryDef, i.countryAttCount, i.countryDefCount, i.countryAttLose, i.countryDefLose)
     content= content+"`"
     return content
