@@ -2,7 +2,7 @@ import requests
 from operator import attrgetter
 
 def military(save):
-    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&playersOnly=true&save={0}&value=player;countryName;human;FL;max_manpower;army_tradition;total_navy;army_professionalism;total_casualties;battleCasualties;attritionCasualties;navalCasualties;total_mana_spent_on_reducing_we;spent_on_forts_building;&format=json'.format(save))
+    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&playersOnly=true&save={0}&value=player;countryName;human;FL;max_manpower;army_tradition;total_navy;army_professionalism;total_casualties;battleCasualties;attritionCasualties;navalCasualties;total_mana_spent_on_reducing_we;spent_on_forts_building;&format=json'.format(save), verify=False)
     data = response.json()
     milList = []
     class Players:

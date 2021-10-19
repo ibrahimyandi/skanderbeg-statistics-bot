@@ -2,7 +2,7 @@ import requests
 from operator import attrgetter
 
 def administrative(save):
-    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&playersOnly=true&save={0}&value=player;countryName;human;total_development;provinces;technology;total_ideas;monthly_income;innovativeness;total_mana_spent;total_mana_spent_on_stabbing_up;real_development_ratio;deving_stats;weighted_avg_monarch;spent_total;spent_on_advisors;spent_on_subsidies;spent_on_gifts;spent_on_buildings;spent_on_loans;spent_on_interest;dev_clicks;&format=json'.format(save))
+    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&playersOnly=true&save={0}&value=player;countryName;human;total_development;provinces;technology;total_ideas;monthly_income;innovativeness;total_mana_spent;total_mana_spent_on_stabbing_up;real_development_ratio;deving_stats;weighted_avg_monarch;spent_total;spent_on_advisors;spent_on_subsidies;spent_on_gifts;spent_on_buildings;spent_on_loans;spent_on_interest;dev_clicks;&format=json'.format(save), verify=False)
     data = response.json()
     admList = []
     class Players:

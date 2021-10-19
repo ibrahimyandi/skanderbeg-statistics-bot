@@ -2,7 +2,7 @@ import requests
 from operator import attrgetter
 
 def navalData(save, playerCount):
-    response = requests.get('http://skanderbeg.pm/api.php?scope=getSaveDataDump&playersOnly=true&save={0}&type=battlesData'.format(save))
+    response = requests.get('http://skanderbeg.pm/api.php?scope=getSaveDataDump&playersOnly=true&save={0}&type=battlesData'.format(save), verify=False)
     data = response.json()
     battles = []
     class Players:

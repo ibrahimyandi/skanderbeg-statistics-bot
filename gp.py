@@ -2,7 +2,7 @@ import requests
 from operator import attrgetter
 
 def greatPowers(save, playerCount):
-    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&playersOnly=true&save={0}&value=gp_score;player;countryName&format=json'.format(save))
+    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&scope=getCountryData&playersOnly=true&save={0}&value=gp_score;player;countryName&format=json'.format(save), verify=False)
     data = response.json()
     class Players:
         def __init__(self, countryName, player, gp_score):

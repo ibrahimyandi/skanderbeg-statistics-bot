@@ -2,7 +2,7 @@ import requests
 from operator import attrgetter
 
 def scored(save):
-    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&playersOnly=true&scope=getCountryData&save={0}&value=player;countryName;human;overall_strength;provinces;monthly_income;&format=json'.format(save))
+    response = requests.get('https://skanderbeg.pm/api.php?key=a6aeaf7782e8c5444b8e9f55cb5abc36&playersOnly=true&scope=getCountryData&save={0}&value=player;countryName;human;overall_strength;provinces;monthly_income;&format=json'.format(save), verify=False)
     data = response.json()
     scoreList = []
     class Players:
